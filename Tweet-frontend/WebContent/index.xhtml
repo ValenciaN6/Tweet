@@ -1,0 +1,22 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"> 
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:x_rt="http://java.sun.com/jstl/xml_rt"> 
+
+<h:head>
+	<title>Tweet</title>
+</h:head> 
+<body> 
+<h2>Tweet Details</h2>
+		<h:form action="rest/api" method="post" >
+			<h:panelGrid columns="2">
+				<h:outputLabel value="Name" />
+				<h:inputText name="body" />
+				
+				<h:commandButton type="submit" value="submit" />
+			</h:panelGrid>
+		</h:form>
+</body> 
+</html>
