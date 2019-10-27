@@ -29,7 +29,7 @@ public class TweetController {
 	
 	@POST
 	@Consumes(MediaType.APPLICATION_FORM_URLENCODED)
-	public void createTweet(@FormParam("body") String body) {
+	public void createTweet(@FormParam("body") String body) throws Exception{
 		Tweet tweet = new Tweet();
 		tweet.setBody(body);
 		
@@ -40,14 +40,14 @@ public class TweetController {
 		// post a tweet on twitter
 		try {
 			this.tweetOnTwitter(body);
-		} catch (TwitterException e) {
+		} catch (Exception e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 		
 	}
 	
-	private void tweetOnTwitter(String body) throws TwitterException {
+	private void tweetOnTwitter(String body) throws Exception {
 		ConfigurationBuilder cb = new ConfigurationBuilder();
 		cb.setDebugEnabled(true)
 		  .setOAuthConsumerKey(CONSUMER_KEY)
